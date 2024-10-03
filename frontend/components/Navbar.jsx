@@ -1,0 +1,40 @@
+import { Link } from "react-router-dom"
+import { pageDataLeft } from "./pageData"
+import { pageDataRight } from "./pageData"
+import React from "react"
+
+export function Navbar() {
+    return (
+        <div className="flex justify-between p-5 items-center bg-white fixed top-0 left-0 right-0 z-10 shadow-md">
+            <div className='flex gap-12 items-center'>
+                <h1 className='text-2xl font-bold text-[#44423F]'>Social<span className='text-3xl'>.</span>Soothe</h1>
+                <ul className="flex gap-5 cursor-pointer text-[#44423F]">
+                        {pageDataLeft.map((page) => {
+                        return (
+                            <li key={page.path} className='hover:font-bold transition duration-300 ease-in-out'>
+                                <Link to={page.path}>
+                                {page.name}
+                                </Link>
+                            </li>
+                        )
+                    })}
+
+                </ul>
+            </div>
+
+            <ul className="flex gap-5 cursor-pointer text-[#44423F]">
+                {pageDataRight.map((page) => {
+                    return (
+                        <li key={page.path} className='hover:font-bold transition duration-300 ease-in-out'>
+                            <Link to={page.path}>
+                                {page.name}
+                            </Link>
+                        </li>
+                    );
+                })}
+            </ul>
+
+        </div>
+
+    )
+}
