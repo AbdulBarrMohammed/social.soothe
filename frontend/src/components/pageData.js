@@ -7,17 +7,17 @@ export const pageDataLoggedIn = [
     {
         name: "Breathe exercise",
         path: "/breathe",
-        img: "../src/assets/home.svg"
+        img: "../src/assets/heart.svg"
     },
     {
         name: "Journals",
         path: "/journals",
-        img: "../src/assets/home.svg"
+        img: "../src/assets/journal.svg"
     },
     {
         name: "Challenge",
         path: "/challenge",
-        img: "../src/assets/home.svg"
+        img: "../src/assets/gamepad.svg"
     },
 
 ]

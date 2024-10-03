@@ -3,24 +3,24 @@ import { getJournal, getJournals, createJournal, updateJournal, deleteJournal } 
 import React from 'react'
 
 import {HashRouter as Router, Routes, Route} from "react-router-dom";
-import  { About } from "../pages/About"
-import { Contact } from "../pages/Contact"
-import { Article } from "../pages/Article"
-import { Dashboard } from "../pages/Dashboard"
-import { Journals } from "../pages/Journals"
-import { CreateJournal } from "../pages/CreateJournal"
-import { Landing } from '../pages/Landing';
-import { Breathe } from '../pages/Breathe';
-import { SelectedJournal } from '../pages/SelectedJournal';
-import { Challenge } from '../pages/Challenge';
-import { Faq } from '../pages/Faq';
-import { Advice } from '../pages/Advice';
-import { LogIn } from '../pages/LogIn';
-import { SignUp } from '../pages/SignUp';
+import  { About } from "./pages/About"
+import { Contact } from "./pages/Contact"
+import { Article } from "./pages/Article"
+import { Dashboard } from "./pages/Dashboard"
+import { Journals } from "./pages/Journals"
+import { CreateJournal } from "./pages/CreateJournal"
+import { Landing } from './pages/Landing';
+import { Breathe } from './pages/Breathe';
+import { SelectedJournal } from './pages/SelectedJournal';
+import { Challenge } from './pages/Challenge';
+import { Faq } from './pages/Faq';
+import { Advice } from './pages/Advice';
+import { LogIn } from './pages/LogIn';
+import { SignUp } from './pages/SignUp';
 
-import { Sidebar } from "../components/Sidebar"
-import { LayoutLoggedIn } from '../components/LayoutLoggedIn';
-import {Layout} from "../components/Layout"
+import { Sidebar } from "./components/Sidebar"
+import { LayoutLoggedIn } from './components/LayoutLoggedIn';
+import {Layout} from "./components/Layout"
 
 
 function App() {

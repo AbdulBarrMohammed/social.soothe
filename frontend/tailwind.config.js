@@ -16,7 +16,9 @@ export default {
       colors: {
         pink: 'rgb(242, 175, 212)',
         lightRed: 'rgb(237, 111, 133)',
-        lightOrange: 'rgb(242, 169, 86)'
+        lightOrange: 'rgb(242, 169, 86)',
+        myBlue: 'rgb(88, 168, 248)',
+        myYellow: 'rgb(247, 208, 70)'
       },
     },
   },

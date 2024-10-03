@@ -3,9 +3,11 @@ import { Outlet } from "react-router-dom"
 
 export function LayoutLoggedIn () {
     return (
-        <>
-            <Sidebar />
+        <div className="flex">
+            <Sidebar/>
             <Outlet />
-        </>
+
+
+        </div>
     )
 }
