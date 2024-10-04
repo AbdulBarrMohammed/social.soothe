@@ -17,29 +17,27 @@ export function Journals() {
     }, [])
 
     return (
-        <div className="py-24">
+        <>
             <div className="flex flex-col">
-                <h1 className="text-2xl py-5 px-10 font-bold">Journal Entry</h1>
+                <h1 className="text-2xl py-5 font-bold">Journal Entries</h1>
 
-                <div className="flex flex-wrap gap-5 px-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 grid-rows-2 ">
                     {journals.map((journal) => {
                         return (
-                            <div>
-                                <JournalCard journal={journal}/>
-
-
-                            </div>
+                            <JournalCard journal={journal}/>
                         )
                     })}
-                    <div className="flex flex-col shadow-lg rounded-lg cursor-pointer w-64 h-52 bg-[#eeeeee] p-5 items-center justify-center">
+                    <div className="flex flex-col shadow-lg rounded-lg cursor-pointer bg-[#eeeeee] p-5 items-center justify-center">
                         <img src="../src/assets/plus.svg" className="h-10"/>
-
                     </div>
+
                 </div>
 
             </div>
+        </>
 
-        </div>
+
+
     )
 
 

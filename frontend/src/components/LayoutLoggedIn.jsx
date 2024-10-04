@@ -5,8 +5,10 @@ export function LayoutLoggedIn () {
     return (
         <div className="flex">
             <Sidebar/>
-            <Outlet />
+            <div className="flex-grow px-10 pt-20">
+                <Outlet />
 
+            </div>
 
         </div>
     )
