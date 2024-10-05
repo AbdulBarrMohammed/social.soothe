@@ -1,6 +1,7 @@
 import { getJournals } from "../controller"
 import { useState, useEffect } from "react"
 import { JournalCard } from "../components/JournalCard"
+import { Link } from "react-router-dom"
 
 
 export function Journals() {
@@ -25,16 +26,18 @@ export function Journals() {
                     {journals.map((journal) => {
                         return (
                             <JournalCard journal={journal}/>
+
                         )
                     })}
-                    <div className="flex flex-col shadow-lg rounded-lg cursor-pointer bg-[#eeeeee] p-5 items-center justify-center">
+                    <Link to={`/createJournal`} className="flex flex-col shadow-lg rounded-lg cursor-pointer bg-[#eeeeee] p-5 items-center justify-center">
                         <img src="../src/assets/plus.svg" className="h-10"/>
-                    </div>
+                    </Link>
 
                 </div>
 
             </div>
         </>
+
 
 
 
