@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { getJournal } from "../controller"
 import { useNavigate, useParams } from "react-router-dom"
-import { Navigate } from "react-router-dom"
+
 
 export function SelectedJournal() {
     const [journal, setJournal] = useState({})

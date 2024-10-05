@@ -4,7 +4,7 @@ import { pageDataLoggedIn } from "./pageData"
 export function Sidebar() {
     return (
         <>
-        <aside className=' bg-[#F9F6F4] h-screen pt-16'>
+        <aside className=' bg-[#F9F6F4] h-screen pt-16 sticky top-0'>
             <ul className='py-10 flex flex-col w-full'>
                     {pageDataLoggedIn.map((page) => {
                         return (
