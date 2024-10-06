@@ -30,7 +30,7 @@ export function Journals() {
 
                         )
                     })}
-                    <Link to={`/createJournal`} className="flex flex-col shadow-lg rounded-lg cursor-pointer bg-[#eeeeee] p-5 items-center justify-center">
+                    <Link to={`/createJournal`} className="flex flex-col rounded-3xl cursor-pointer bg-[#eeeeee] p-5 items-center justify-center">
                         <img src="../src/assets/plus.svg" className="h-10"/>
                     </Link>
 
