@@ -1,9 +1,23 @@
 import { Link } from "react-router-dom"
 import { pageDataLeft } from "./pageData"
 import { pageDataRight } from "./pageData"
-import React from "react"
+import React, { useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 
 export function Navbar() {
+    let user = sessionStorage.getItem("User")
+    const naviagte = useNavigate()
+
+    function handleLogout() {
+        sessionStorage.removeItem("User")
+        naviagte("/")
+    }
+
+    useEffect(() => {
+        console.log("user below");
+        console.log(user)
+    })
+
     return (
         <div className="flex justify-between p-5 items-center bg-white fixed top-0 left-0 right-0 z-10 shadow-md">
             <div className='flex gap-12 items-center'>
@@ -32,6 +46,10 @@ export function Navbar() {
                         </li>
                     );
                 })}
+                {user &&
+                    <button onClick={handleLogout}>Log out</button>
+                }
+
             </ul>
 
         </div>

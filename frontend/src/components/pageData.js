@@ -19,6 +19,11 @@ export const pageDataLoggedIn = [
         path: "/challenge",
         img: "../src/assets/gamepad.svg"
     },
+    {
+        name: "Daily Affirmation",
+        path: "/affirmations",
+        img: "../src/assets/heart.svg"
+    },
 
 ]
 

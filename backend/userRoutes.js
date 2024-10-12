@@ -8,6 +8,7 @@ require("dotenv").config({path: "./config.env"})
 let userRoutes = express.Router()
 const SALT_ROUNDS = 6
 
+
 // #1 Retrieve All
 //http://localhost:3000/journal
 userRoutes.route("/users").get( async (req, res) => {
@@ -60,6 +61,7 @@ userRoutes.route("/users").post( async (req, res) => {
             gender: req.body.gender,
             dateJoined: new Date(),
             journals: []
+
 
             //will also need
             //challenges

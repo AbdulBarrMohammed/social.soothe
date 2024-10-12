@@ -15,15 +15,30 @@ import { SelectedJournal } from './pages/SelectedJournal';
 import { Challenge } from './pages/Challenge';
 import { Faq } from './pages/Faq';
 import { Advice } from './pages/Advice';
-import { LogIn } from './pages/LogIn';
-import { SignUp } from './pages/SignUp';
+import { LogIn } from './components/LogIn';
+import { SignUp } from './components/SignUp';
 
 import { Sidebar } from "./components/Sidebar"
 import { LayoutLoggedIn } from './components/LayoutLoggedIn';
 import {Layout} from "./components/Layout"
+import { Affirmations } from './pages/Affirmations';
+
+
+import axios from 'axios';
 
 
 function App() {
+
+  useEffect(() => {
+    //restore token when user refreshes page
+    let token = sessionStorage.getItem("User")
+    if (token) {
+       axios.defaults.headers.common["Authorization"] = `Bearer ${token}`
+    }
+
+
+  }, [])
+
 
   //Pages
 
@@ -48,7 +63,6 @@ function App() {
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/faq" element={<Faq/>}/>
           <Route path="/advice" element={<Advice/>}/>
-
           <Route path="/signUp" element={<SignUp/>}/>
           <Route path="/logIn" element={<LogIn/>}/>
 
@@ -58,6 +72,7 @@ function App() {
             <Route path="/createJournal" element={<CreateJournal/>}/>
             <Route path="/article" element={<Article/>}/>
             <Route path="/breathe" element={<Breathe/>}/>
+            <Route path="/affirmations" element={<Affirmations/>}/>
             <Route path="/selectedJournal/:id" element={<SelectedJournal/>}/>
             <Route path="/challenge" element={<Challenge/>}/>
           </Route>

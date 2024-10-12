@@ -2,19 +2,27 @@ import { getJournals } from "../controller"
 import { useState, useEffect } from "react"
 import { JournalCard } from "../components/JournalCard"
 import { Link } from "react-router-dom"
+import * as jwt_decode from "jwt-decode"
+
 
 
 export function Journals() {
     const [journals, setJournals] = useState([])
+    const [user, setUser] = useState({})
 
     useEffect(() => {
         //load journal data from mongodb
-        async function loadAllJournals() {
-            const data = await getJournals()
-            setJournals(data)
+        async function loadUserJournals() {
+            //grab user token
+            const token = sessionStorage.getItem("User")
+            const decodedUser = jwt_decode.jwtDecode(token)
+            const allJournals = await getJournals()
+            const filteredJournals = allJournals.filter((journal) => journal.author == decodedUser._id)
+            setJournals(filteredJournals)
+            setUser(decodedUser)
 
         }
-        loadAllJournals()
+        loadUserJournals()
     }, [])
 
 
