@@ -6,16 +6,28 @@ export function Breathe() {
     const [counter, setCounter] = useState(4);
     const [isActive, setIsActive] = useState(false);
     const [go, setGo] = useState(0);
-    const [breathe, setBreathe] = useState("Breathe in");
+    const [breathe, setBreathe] = useState("Breathe in...");
+    const [rounds, setRounds] = useState(1)
 
   const [key, setKey] = useState(0); // To re-render the timer
 
   const restart = () => {
 
-        if (go == 0) {
+
+        if (go == 2 || go == 5 || go == 8) {
+            setRounds(rounds + 1)
+            setBreathe("Breathe in...")
+            setCounter(4)
+
+        }
+
+
+        else if (go == 0 || go == 3 || go == 6 || go == 9) {
+            setBreathe("Hold breathe...")
             setCounter(7)
         }
-        else if (go == 1) {
+        else if (go == 1 || go == 4 || go == 7 || go == 10) {
+            setBreathe("exhale...")
             setCounter(8)
         }
         //setCounter(8);
@@ -37,22 +49,26 @@ export function Breathe() {
 
     const handleComplete = () => {
 
+        // end of breathing exercise
+        if (go == 11) {
+            setIsActive(false);
+            setGo(0);
+            setKey(0)
+            setCounter(4)
+            setRounds(1)
+            setBreathe("Breathe in...")
 
-            if (go === 2) {
-                setIsActive(false);
-                setGo(0);
-                setKey(0)
-                setCounter(4)
-            }
-             else {
-                /*
-                setTimeout(() => {
+        }
+         else {
+            /*
+            setTimeout(() => {
 
-                  }, 4000) */
+              }, 4000) */
 
-                restart();
-            }
-            return [false, 0]; // Return false to stop the timer
+            restart();
+        }
+        console.log("go value", go)
+        return [false, 0]; // Return false to stop the timer
 
 
 
@@ -112,6 +128,12 @@ export function Breathe() {
         </CountdownCircleTimer>
         {isActive &&
             breathe
+
+        }
+
+        {isActive &&
+            rounds
+
         }
 
       </div>
