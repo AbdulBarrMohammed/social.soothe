@@ -9,12 +9,17 @@ export function Breathe() {
     const [breathe, setBreathe] = useState("Breathe in...");
     const [rounds, setRounds] = useState(1)
 
-  const [key, setKey] = useState(0); // To re-render the timer
 
-  const restart = () => {
+    const breatheInAudio = new Audio("../../src/assets/breathe-in.wav")
+    const exhaleAudio = new Audio("../../src/assets/exhale.wav")
+
+    const [key, setKey] = useState(0); // To re-render the timer
+
+    const restart = () => {
 
 
         if (go == 2 || go == 5 || go == 8) {
+            breatheInAudio.play()
             setRounds(rounds + 1)
             setBreathe("Breathe in...")
             setCounter(4)
@@ -27,6 +32,7 @@ export function Breathe() {
             setCounter(7)
         }
         else if (go == 1 || go == 4 || go == 7 || go == 10) {
+            exhaleAudio.play()
             setBreathe("exhale...")
             setCounter(8)
         }
@@ -40,14 +46,17 @@ export function Breathe() {
 
   };
 
-  const clear = () => {
-    setCounter(0);
-    setIsActive(false);
-    // Increment the key to re-render the timer
-    setKey((prevKey) => prevKey + 1);
-  };
+    const clear = () => {
+        setIsActive(true);
+        setCounter(4);
+        setGo(0);
+        setBreathe("Breathe in...")
+        setRounds(1)
+        setKey((prevKey) => prevKey + 1);
+    };
 
     const handleComplete = () => {
+
 
         // end of breathing exercise
         if (go == 11) {
@@ -60,10 +69,6 @@ export function Breathe() {
 
         }
          else {
-            /*
-            setTimeout(() => {
-
-              }, 4000) */
 
             restart();
         }
@@ -73,6 +78,12 @@ export function Breathe() {
 
 
     };
+
+    const pause = () => {
+        setIsActive(false)
+        breatheInAudio.pause()
+        exhaleAudio.pause()
+    }
 
     const renderTime = ({ remainingTime }) => {
         return (
@@ -86,6 +97,14 @@ export function Breathe() {
 
 
     const start = () => {
+        //before checking check if the exercise is in the breathing stage which should have counter 4
+        if (counter == 4) {
+            breatheInAudio.play()
+        }
+        else if (counter == 8) {
+            exhaleAudio.play()
+        }
+
         setIsActive(true)
 
     }
@@ -125,6 +144,7 @@ export function Breathe() {
         >
           {renderTime}
 
+
         </CountdownCircleTimer>
         {isActive &&
             breathe
@@ -141,6 +161,7 @@ export function Breathe() {
 
         <button onClick={clear}>CLEAR</button>
         <button onClick={start}>Press to start</button>
+        <button onClick={pause}>Pause</button>
       </div>
     </div>
   );
