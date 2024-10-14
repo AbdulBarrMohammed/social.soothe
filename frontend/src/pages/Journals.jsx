@@ -28,21 +28,28 @@ export function Journals() {
 
     return (
         <>
-            <div className="flex flex-col pb-5">
-                <h1 className="text-2xl py-5 font-bold">Journal Entries</h1>
+            <div className="flex flex-col bg-[#F0F8FF] h-screen">
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 grid-rows ">
-                    {journals.map((journal) => {
-                        return (
-                            <JournalCard journal={journal}/>
+                <h1 className="text-2xl py-10 font-bold text-center">Journal Entries</h1>
 
-                        )
-                    })}
-                    <Link to={`/createJournal`} className="flex flex-col rounded-3xl cursor-pointer bg-[#eeeeee] p-5 items-center justify-center">
-                        <img src="../src/assets/plus.svg" className="h-10"/>
-                    </Link>
+                <div className="flex justify-center">
+                    <div className="flex flex-wrap gap-5">
+                        {journals.map((journal) => {
+                            return (
+                                <JournalCard journal={journal}/>
+
+                            )
+                        })}
+                        <Link to={`/createJournal`} className="flex flex-col rounded-3xl cursor-pointer bg-[#eeeeee] p-5 items-center justify-center">
+                            <img src="../src/assets/plus.svg" className="h-10"/>
+                        </Link>
+
+                    </div>
 
                 </div>
+
+
+
 
             </div>
         </>

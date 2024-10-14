@@ -168,7 +168,7 @@ const Questions = () => {
               )}
           </div>
 
-          <button className='mt-20 bg-[#EE7B30] text-white p-5 rounded-full text-[18px] font-bold shadow-md'>Get started</button>
+          <button className='mt-20 bg-[#4470AD] text-white p-5 rounded-full text-[18px] font-bold shadow-md'>Get started</button>
 
 
         </div>

@@ -6,7 +6,7 @@ export const pageDataLoggedIn = [
     },
     {
         name: "Breathe exercise",
-        path: "/breathe",
+        path: "/breatheIntro",
         img: "../src/assets/heart.svg"
     },
     {

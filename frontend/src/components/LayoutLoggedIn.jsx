@@ -15,12 +15,10 @@ export function LayoutLoggedIn () {
 
     }, [user])
     return (
-        <div className="flex">
+        <div className="flex flex-col">
             <Sidebar/>
-            <div className="flex-grow px-10 pt-20">
-                <Outlet />
+            <Outlet />
 
-            </div>
 
         </div>
     )

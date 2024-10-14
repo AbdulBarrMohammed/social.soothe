@@ -22,6 +22,7 @@ import { Sidebar } from "./components/Sidebar"
 import { LayoutLoggedIn } from './components/LayoutLoggedIn';
 import {Layout} from "./components/Layout"
 import { Affirmations } from './pages/Affirmations';
+import { BreatheIntro } from './pages/BreatheIntro';
 
 
 import axios from 'axios';
@@ -71,7 +72,8 @@ function App() {
             <Route path="/journals" element={<Journals/>}/>
             <Route path="/createJournal" element={<CreateJournal/>}/>
             <Route path="/article" element={<Article/>}/>
-            <Route path="/breathe" element={<Breathe/>}/>
+            <Route path="/breathe/:start/:middle/:end" element={<Breathe/>}/>
+            <Route path="/breatheIntro" element={<BreatheIntro/>}/>
             <Route path="/affirmations" element={<Affirmations/>}/>
             <Route path="/selectedJournal/:id" element={<SelectedJournal/>}/>
             <Route path="/challenge" element={<Challenge/>}/>

@@ -11,25 +11,27 @@ export function Landing() {
   useEffect(() => {
     AOS.init({duration:1200})
   })
+  //#F9F6F4
 
 
   return (
+
     <>
       {/* main section */}
       <div className="bg-white flex flex-col items-center text-[#44423F]">
-        <div className='bg-[#F9F6F4] flex gap-10  justify-center items-center px-20 py-40 w-full'>
+        <div className='bg-[#F0F8FF] flex gap-10  justify-center items-center px-20 py-40 w-full'>
             <div className='w-2/4 flex gap-6 flex-col'>
               <h1 className='text-7xl font-semibold leading-[5rem] text-[#44423F]'>Helping You Navigate Social Anxiety.</h1>
               <p className='text-3xl leading-[2.6rem] text-[#44423F]'>Social Soothe will help with your social anxiety
                 when no one else will.
               </p>
               <Link to={`/signUp`}>
-                    <button className='bg-[#EE7B30] text-white  p-5 rounded-full text-[18px] font-bold shadow-md' >Try it now</button>
+                    <button className='bg-[#4470AD] text-white  p-5 rounded-full text-[18px] font-bold shadow-md' >Try it now</button>
              </Link>
             </div>
           <div>
 
-            <img src={`../src/assets/walking.svg`} className="h-96"  alt="Description" />
+            <img src={`../src/assets/walking_blue.svg`} className="h-96"  alt="Description" />
           </div>
         </div>
 
@@ -71,7 +73,7 @@ export function Landing() {
         <Questions />
 
         {/* Social Soothe description section*/}
-        <div className="bg-[#F9F6F4] flex flex-col justify-center items-center px-10 py-20 gap-10 w-full">
+        <div className="bg-[#F0F8FF] flex flex-col justify-center items-center px-10 py-20 gap-10 w-full">
           <h2 className='text-5xl text-center py-10 font-medium'>Take our Social Soothe challenge</h2>
           <div className='flex flex-col gap-20 items-center justify-center'>
 
@@ -217,7 +219,7 @@ export function Landing() {
 
       </div>
 
-      <footer className='bg-[#F9F6F4] flex flex-col justify-center items-center px-10 py-20 gap-10 w-full'>
+      <footer className='bg-[#F0F8FF] flex flex-col justify-center items-center px-10 py-20 gap-10 w-full'>
         <div className='flex justify-around'>
           <div className='flex flex-col gap-2 w-1/2'>
             <p className='font-bold text-xl'>Your Mental Health matters</p>

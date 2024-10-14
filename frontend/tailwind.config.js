@@ -31,7 +31,10 @@ export default {
         emojiWorriedWord: 'rgb(123, 57, 196)',
         emojiStressed: 'rgb(250, 225, 238)',
         emojiStressedWord: 'rgb(205, 92, 146)',
-        modalBg: 'rgba(0, 0, 0, .7)'
+        modalBg: 'rgba(0, 0, 0, .7)',
+        bgBlue: 'rgb(238, 235, 253)',
+        deepBlue: 'rgb(40, 95, 229)'
+
       },
     },
   },
