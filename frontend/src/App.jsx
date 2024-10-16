@@ -23,6 +23,7 @@ import { LayoutLoggedIn } from './components/LayoutLoggedIn';
 import {Layout} from "./components/Layout"
 import { Affirmations } from './pages/Affirmations';
 import { BreatheIntro } from './pages/BreatheIntro';
+import { Posts } from './pages/Posts';
 
 
 import axios from 'axios';
@@ -77,6 +78,7 @@ function App() {
             <Route path="/affirmations" element={<Affirmations/>}/>
             <Route path="/selectedJournal/:id" element={<SelectedJournal/>}/>
             <Route path="/challenge" element={<Challenge/>}/>
+            <Route path="/posts" element={<Posts/>}/>
           </Route>
         </Route>
       </Routes>

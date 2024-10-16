@@ -32,16 +32,13 @@ export function CreateJournal() {
 
         //naviagte back to journals page
         navigate('/journals')
+
     }
 
     function submitModal() {
         /*open mood modal and keep form modal closed */
         setFormModal(true)
         setMoodModal(false)
-
-
-        //setMoodModal(true)
-        //setFormModal(false)
 
     }
 

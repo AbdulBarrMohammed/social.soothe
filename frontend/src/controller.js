@@ -98,3 +98,41 @@ export async function updateAffirmation(id, affirmation) {
     return res
 
 }
+
+//POSTS
+export async function getPosts() {
+    const res = await axios.get(`${URL}/posts`)
+    if (res.status === 200) {
+        return res.data
+    }
+    else {
+        return
+    }
+
+}
+
+export async function getPost(id) {
+    const res = await axios.get(`${URL}/posts/${id}`)
+
+    if (res.status === 200) {
+        return res.data
+    }
+    else {
+        return
+    }
+
+}
+
+
+export async function createPost(post) {
+    const res = await axios.post(`${URL}/posts`, post)
+    return res
+
+}
+
+export async function deletePost(id) {
+    const res = await axios.delete(`${URL}/posts/${id}`)
+    return res
+
+
+}

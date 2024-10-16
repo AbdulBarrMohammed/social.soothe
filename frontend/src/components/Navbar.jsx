@@ -19,7 +19,7 @@ export function Navbar() {
     })
 
     return (
-        <div className="flex justify-between p-4 items-center bg-white fixed top-0 left-0 right-0 z-10">
+        <div className="flex justify-between p-3 items-center bg-white fixed top-0 left-0 right-0 z-10">
             <div className='flex gap-12 items-center'>
                 <h1 className='text-2xl font-bold text-[#44423F]'>Social<span className='text-3xl'>.</span>Soothe</h1>
                 <ul className="flex gap-5 cursor-pointer text-[#44423F]">

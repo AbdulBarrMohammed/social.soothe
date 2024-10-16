@@ -3,6 +3,7 @@ const express = require("express")
 const cors = require("cors")
 const journals = require("./journalRoutes")
 const users = require("./userRoutes")
+const posts = require("./postRoutes")
 
 
 
@@ -14,6 +15,7 @@ app.use(cors())
 app.use(express.json())
 app.use(journals)
 app.use(users)
+app.use(posts)
 
 
 

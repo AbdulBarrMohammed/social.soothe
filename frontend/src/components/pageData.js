@@ -24,6 +24,11 @@ export const pageDataLoggedIn = [
         path: "/affirmations",
         img: "../src/assets/heart.svg"
     },
+    {
+        name: "Community",
+        path: "/posts",
+        img: "../src/assets/heart.svg"
+    },
 
 ]
 

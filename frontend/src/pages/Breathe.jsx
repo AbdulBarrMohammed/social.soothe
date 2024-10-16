@@ -1,16 +1,14 @@
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { breatheInfo } from "./breatheData";
 
-export function Breathe(props) {
+export function Breathe() {
 
     const params = useParams()
     const startNum = parseInt(params.start);
     const middleNum = parseInt(params.middle);
     const endNum = parseInt(params.end);
-
-
-
 
     const [counter, setCounter] = useState(startNum);
     const [isActive, setIsActive] = useState(false);
@@ -18,19 +16,33 @@ export function Breathe(props) {
     // number to keep track of how many times the timer goes
     const [go, setGo] = useState(0);
     const [breathe, setBreathe] = useState("Breathe in...");
+    const [description, setDescription] = useState("")
     const [rounds, setRounds] = useState(1)
+
+    const [title, setTitle] = useState("");
 
 
     const breatheInAudio = new Audio("../../src/assets/breathe-in.wav")
     const exhaleAudio = new Audio("../../src/assets/exhale.wav")
+
+    useEffect(() => {
+        if (endNum === 3) {
+            setTitle(breatheInfo[0].title);
+            setDescription(breatheInfo[0].info)
+        } else if (endNum === 6) {
+            setTitle(breatheInfo[1].title);
+            setDescription(breatheInfo[1].info)
+        } else {
+            setTitle(breatheInfo[2].title);
+            setDescription(breatheInfo[2].info)
+        }
+    }, [endNum]);
 
     const [key, setKey] = useState(0); // To re-render the timer
 
     if (startNum == 3) {
         //3-3-3
     }
-
-
 
     const restart = () => {
             if (go == 2 || go == 5 || go == 8) {
@@ -116,7 +128,6 @@ export function Breathe(props) {
             console.log(go, "this is the go value")
             if (startNum == 3) {
 
-                // works
                 if (counter == endNum && (go == 1 || go == 4 || go == 7 || go == 10)) {
                     console.log("hold")
                 }
@@ -139,12 +150,9 @@ export function Breathe(props) {
                 }
 
             }
-
-
             setIsActive(true)
 
         }
-
 
 
   useEffect(() => {
@@ -152,7 +160,7 @@ export function Breathe(props) {
     if (isActive && counter > 0) {
       timer = setInterval(
         () => setCounter((prevCounter) => prevCounter - 1),
-        8000
+        9000
       );
     } else if (!isActive && counter !== 0) {
       clearInterval(timer);
@@ -161,21 +169,10 @@ export function Breathe(props) {
     return () => clearInterval(timer);
   }, [counter, isActive]);
 
-
-
-
-
   return (
-    <div className="flex bg-[#F0F8FF] h-screen justify-center pt-10">
-        <div className="flex flex-col items-center gap-5 ">
-            <div className="flex gap-10">
-                {params.start}
-                <div>Step 1:</div>
-                <div>Step 2:</div>
-                <div>Step 3:</div>
-                <div>Step 4:</div>
+    <div className="flex bg-[#F0F8FF] h-screen justify-center pt-10 gap-10">
 
-            </div>
+        <div className="flex flex-col items-center gap-5 ">
             <div>
                 <h3 className="font-bold text-2xl">Progress Timer</h3>
             </div>
@@ -202,6 +199,13 @@ export function Breathe(props) {
         </div>
         <div>
 
+
+
+        </div>
+
+        <div className="flex flex-col w-1/3 gap-5">
+            <h2 className="font-bold text-3xl">{title}</h2>
+            <p>{description}</p>
         </div>
 
     </div>

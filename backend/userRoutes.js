@@ -60,19 +60,16 @@ userRoutes.route("/users").post( async (req, res) => {
             password: hash,
             gender: req.body.gender,
             dateJoined: new Date(),
-            journals: []
-
-
+            journals: [],
             //will also need
-            //challenges
+            //challenges and notes
+            posts: []
 
         }
         let data = await db.collection("users").insertOne(mongoObject)
         res.json(data)
 
     }
-
-
 
 })
 
@@ -86,7 +83,8 @@ userRoutes.route("/users/:id").put( async (req, res) => {
             password: req.body.password,
             gender: req.body.gender,
             dateJoined: new Date(),
-            journals: []
+            journals: [],
+            posts: []
         }
 
         //will also need
